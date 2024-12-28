@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/quote';
+const API_URL = 'https://globeback-641c.onrender.com/quote';
 
 export default function AboutModel({ onclose }) {
   const [theme, setTheme] = useState({ backgroundColor: 'white' });
@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
   formData.append('image', file);
 
   try {
-      const response = await axios.post('http://localhost:8000/api/uploads', formData, {
+      const response = await axios.post('https://globeback-641c.onrender.com/api/uploads', formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -93,7 +93,7 @@ const handleSubmit = async (e) => {
 
   const handleLogout = async () => {
     try {
-        await axios.post('http://localhost:8000/logout', {}, { withCredentials: true });
+        await axios.post('https://globeback-641c.onrender.com/logout', {}, { withCredentials: true });
         navigate('/');
     } catch (error) {
         console.error('Logout failed:', error.response?.data || error.message);

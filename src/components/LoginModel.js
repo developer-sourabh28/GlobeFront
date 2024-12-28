@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const LOGIN_URL = 'http://localhost:8000/login';
+const LOGIN_URL = 'https://globeback-641c.onrender.com/login';
 
 export default function LoginModel() {
     const navigate = useNavigate();

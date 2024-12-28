@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const USER_URL = 'http://localhost:8000/signup'
+const USER_URL = 'https://globeback-641c.onrender.com/signup'
 
 export default function UserModel() {
 

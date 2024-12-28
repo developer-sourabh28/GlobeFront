@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './Navbar';
 import { jwtDecode } from 'jwt-decode';
 
-const API_URL = 'http://localhost:8000/quote';
+const API_URL = 'https://globeback-641c.onrender.com/quote';
 
 export default function Home({ quote, currentUser }) {
   const [quotes, setQuotes] = useState([]);
@@ -59,7 +59,7 @@ export default function Home({ quote, currentUser }) {
   const handleLike = async (quoteId) => {
     try {
       const response = await axios.patch(
-        `http://localhost:8000/api/${quoteId}/like`,
+        `https://globeback-641c.onrender.com/api/${quoteId}/like`,
         {},
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -133,7 +133,7 @@ export default function Home({ quote, currentUser }) {
       if (!commentsVisible[quoteId]) return; // Don't fetch if comments are not visible
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/${quoteId}/comments`,
+          `https://globeback-641c.onrender.com/api/${quoteId}/comments`,
           {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           }
@@ -158,7 +158,7 @@ export default function Home({ quote, currentUser }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/${quoteId}/comments`,
+        `https://globeback-641c.onrender.com/api/${quoteId}/comments`,
         { text: commentText },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }, // Make sure this is set
